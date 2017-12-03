@@ -1,0 +1,11 @@
+<h2>产品</h2>
+<div class="navLinks">
+  <a routerLink="./main">主页</a> |
+  <a routerLink="./interest">兴趣</a> |
+  输入id: <input #id size="6">
+  <button (click)="goToProduct(id.value)">搜索</button>
+</div>
+
+<div class="products-area">
+  <router-outlet></router-outlet>
+</div>

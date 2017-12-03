@@ -1,0 +1,21 @@
+<form class="navbar-form navbar-right" *ngIf="!authService.getUser()">
+  <span class="alert alert-danger" *ngIf="message">{{ message }}</span>
+  <div class="form-group">
+    <label for="username">用户名:</label>
+    <input id="username" type="text" name="username" class="form-control" #username>
+  </div>
+  <div class="form-group">
+    <label for="password">密码:</label>
+    <input id="password" type="text" name="password" class="form-control" #password>
+  </div>
+  <button type="submit" class="btn btn-default"
+          (click)="login(username.value,password.value)">登陆
+  </button>
+</form>
+
+<form class="navbar-form navbar-right" *ngIf="authService.getUser()">
+  <span class="alert alert-success">你好， <b>{{ authService.getUser() }}</b></span>
+  <button class="btn btn-default"
+          (click)="logout()">注销
+  </button>
+</form>

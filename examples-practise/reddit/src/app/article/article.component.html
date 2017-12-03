@@ -1,0 +1,25 @@
+<div>
+  <div>
+    <div>
+      {{ article.votes }}
+    </div>
+    <div>
+      票数
+    </div>
+  </div>
+</div>
+
+<div>
+  <a href="{{ article.link }}">{{ article.title }}</a>
+
+  <div>{{ article.domain() }}</div>
+
+  <ul>
+    <li>
+      <a (click)="voteUp()">赞</a>
+    </li>
+    <li>
+      <a (click)="voteDown()">踩</a>
+    </li>
+  </ul>
+</div>

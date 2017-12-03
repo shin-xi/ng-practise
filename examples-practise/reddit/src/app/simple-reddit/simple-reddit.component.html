@@ -1,0 +1,21 @@
+<form>
+  <h3>添加链接</h3>
+
+  <div>
+    <label for="title">标题：</label>
+    <input id="title" type="text" #newtitle>
+  </div>
+
+  <div>
+    <label for="link">链接：</label>
+    <input id="link" type="text" #newlink>
+  </div>
+
+  <button (click)="addArticle(newtitle,newlink)">提交
+  </button>
+</form>
+
+<div>
+  <app-article *ngFor="let article of sortedArticles()"
+               [article]="article"></app-article>
+</div>
