@@ -1,0 +1,23 @@
+<p>发起一个请求来获取 JSON 数据（默认获得响应体）</p>
+<button (click)="getData1()">获取json数据</button>
+<br>
+<pre>{{data1|json}}</pre>
+<hr>
+
+<p>读取完整的响应体</p>
+<button (click)="getData2()">获取json数据</button>
+<br>
+<pre>{{data2|json}}</pre>
+<hr>
+
+<p>错误处理</p>
+<button (click)="getData3()">错误处理</button>
+<br>
+<pre>{{data3|json}}</pre>
+<hr>
+
+<p>请求非 JSON 数据</p>
+<button (click)="getData4()">txt文本文件</button>
+<br>
+<pre>{{data4|json}}</pre>
+<hr>

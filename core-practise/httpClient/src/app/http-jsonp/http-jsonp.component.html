@@ -1,0 +1,25 @@
+<p>发起一个 JSONP 请求1</p>
+<button (click)="getJsonp()">提交</button>
+<br>
+<pre>{{data|json}}</pre>
+<hr>
+
+<p>发起一个 JSONP 请求2</p>
+<button (click)="getJsonp2()">提交</button>
+<br>
+<pre>{{data2|json}}</pre>
+<hr>
+
+<p>发起一个 JSONP 请求3 百度</p>
+<input type="text" #search>
+<button (click)="getJsonp3(search)">提交</button>
+<br>
+<pre>{{data3|json}}</pre>
+<hr>
+
+<p>发起一个 JSONP 请求4 QQ音乐</p>
+<input type="text" #search1>
+<button (click)="getJsonp4(search1)">提交</button>
+<br>
+<pre>{{data4|json}}</pre>
+<hr>
