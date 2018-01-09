@@ -1,0 +1,44 @@
+<h1>My First Attribute Directive</h1>
+
+<h4>Pick a highlight color</h4>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<p [appHighlight]="color" defaultColor="violet">Highlight me!</p>
+
+
+<h2 id="myUnless">UnlessDirective</h2>
+<p>
+  The condition is currently
+  <span [ngClass]="{ 'a': !condition, 'b': condition, 'unless': true }">{{condition}}</span>.
+  <button
+    (click)="condition = !condition"
+    [ngClass]="{ 'a': condition, 'b': !condition }">
+    Toggle condition to {{condition ? 'false' : 'true'}}
+  </button>
+</p>
+<p *appUnless="condition" class="unless a">
+  (A) This paragraph is displayed because the condition is false.
+</p>
+
+<p *appUnless="!condition" class="unless b">
+  (B) Although the condition is true,
+  this paragraph is displayed because myUnless is set to false.
+</p>
+
+
+<h4>UnlessDirective with template</h4>
+
+<p *appUnless="condition">Show this sentence unless the condition is true.</p>
+
+<p *appUnless="condition" class="code unless">
+  (A) &lt;p *myUnless="condition" class="code unless"&gt;
+</p>
+
+<ng-template [appUnless]="condition">
+  <p class="code unless">
+    (A) &lt;ng-template [myUnless]="condition"&gt;
+  </p>
+</ng-template>
