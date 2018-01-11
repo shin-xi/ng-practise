@@ -1,0 +1,9 @@
+<ul>
+  <li [@trans2states]="state"
+      (@trans2states.start)="animationStarted($event)"
+      (@trans2states.done)="animationDone($event)"
+      (click)="toggleState()">
+    {{name}}
+  </li>
+</ul>
+
